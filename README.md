@@ -7,7 +7,7 @@
 
 A production-grade REST API demonstrating modern DevOps practices with AWS ECS Fargate, automated Infrastructure as Code using Terraform, and containerized deployment with Docker. Built to showcase real-world cloud architecture, debugging skills, and end-to-end automation.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project deploys a fully functional TODO REST API with complete CRUD operations on AWS infrastructure spanning 3 availability zones. Every component is defined as code, making the entire stack reproducible and version-controlled.
 
@@ -26,7 +26,7 @@ This project deploys a fully functional TODO REST API with complete CRUD operati
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -66,7 +66,7 @@ This project deploys a fully functional TODO REST API with complete CRUD operati
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -165,7 +165,7 @@ curl $ALB_URL/health
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
 ### Health Check
 
@@ -217,7 +217,7 @@ curl -X DELETE $ALB_URL/api/todos/2 | jq
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ecs-todo-api/
@@ -261,7 +261,7 @@ ecs-todo-api/
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ![Terraform Apply](docs/terraform-apply.png)\
 *Terraform apply output showing created resource count*
@@ -295,7 +295,7 @@ ecs-todo-api/
 
 ---
 
-## 🔧 Technology Stack
+## Tech Stack
 
 ### Infrastructure
 - **AWS ECS Fargate**: Serverless container orchestration
@@ -322,7 +322,7 @@ ecs-todo-api/
 
 ---
 
-## 🐛 Troubleshooting Guide
+## Troubleshooting Guide
 
 This section documents real issues encountered during development and their solutions.
 
@@ -463,7 +463,7 @@ Now `terraform apply` automatically builds and pushes the image!
 
 ---
 
-## 📊 Monitoring & Observability
+## Observability
 
 ### CloudWatch Dashboard
 
@@ -519,35 +519,35 @@ aws elbv2 describe-target-health \
 
 ---
 
-## 🔐 Security Features
+## Security
 
-### Network Security
-- ✅ **Private Subnets**: ECS tasks and RDS have no direct internet access
-- ✅ **Security Groups**: Strict ingress/egress rules limiting traffic
-- ✅ **NAT Gateways**: Controlled outbound internet for updates
-- ✅ **VPC Flow Logs**: Network traffic monitoring and auditing
+### Network
+- **Private Subnets**: ECS tasks and RDS have no direct internet access
+- **Security Groups**: Strict ingress/egress rules limiting traffic
+- **NAT Gateways**: Controlled outbound internet for updates
+- **VPC Flow Logs**: Network traffic monitoring and auditing
 
 ### Data Security
-- ✅ **Encrypted RDS**: Storage encrypted at rest with AES-256
-- ✅ **Secrets Management**: Database credentials in Parameter Store (encrypted)
-- ✅ **No Hardcoded Secrets**: All sensitive data injected via environment
-- ✅ **IAM Roles**: Least privilege access for ECS tasks
+- **Encrypted RDS**: Storage encrypted at rest with AES-256
+- **Secrets Management**: Database credentials in Parameter Store (encrypted)
+- **No Hardcoded Secrets**: All sensitive data injected via environment
+- **IAM Roles**: Least privilege access for ECS tasks
 
 ### Container Security
-- ✅ **Non-root User**: Container runs as unprivileged user (UID 1000)
-- ✅ **Image Scanning**: ECR scan on push enabled
-- ✅ **Read-only Filesystem**: Where possible, filesystem is read-only
-- ✅ **Health Checks**: Built-in container health monitoring
+- **Non-root User**: Container runs as unprivileged user (UID 1000)
+- **Image Scanning**: ECR scan on push enabled
+- **Read-only Filesystem**: Where possible, filesystem is read-only
+- **Health Checks**: Built-in container health monitoring
 
 ### Application Security
-- ✅ **CORS Configuration**: Cross-origin requests controlled
-- ✅ **Input Validation**: Request data validated before processing
-- ✅ **SQL Injection Protection**: Parameterized queries with psycopg2
-- ✅ **Gunicorn Workers**: Process isolation and timeout protection
+- **CORS Configuration**: Cross-origin requests controlled
+- **Input Validation**: Request data validated before processing
+- **SQL Injection Protection**: Parameterized queries with psycopg2
+- **Gunicorn Workers**: Process isolation and timeout protection
 
 ---
 
-## 💰 Cost Breakdown
+## Cost Breakdown
 
 ### Dev Environment (Monthly Estimates)
 
@@ -600,7 +600,7 @@ Production configuration with higher resources:
 
 ---
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 ### GitHub Actions Workflow
 
@@ -660,50 +660,50 @@ For quick application updates without Terraform:
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 This project demonstrates proficiency in:
 
 ### Infrastructure as Code
-- ✅ Terraform module design and composition
-- ✅ Remote state management with S3 and locking
-- ✅ Multi-environment configuration (dev/prod)
-- ✅ Output values and data source usage
-- ✅ Resource dependencies and lifecycle management
+- Terraform module design and composition
+- Remote state management with S3 and locking
+- Multi-environment configuration (dev/prod)
+- Output values and data source usage
+- Resource dependencies and lifecycle management
 
 ### AWS Cloud Architecture
-- ✅ VPC design with public/private subnets
-- ✅ Multi-AZ deployment for high availability
-- ✅ Load balancing and health checking
-- ✅ Container orchestration with ECS Fargate
-- ✅ Managed database services (RDS)
-- ✅ Secrets management and IAM best practices
+- VPC design with public/private subnets
+- Multi-AZ deployment for high availability
+- Load balancing and health checking
+- Container orchestration with ECS Fargate
+- Managed database services (RDS)
+- Secrets management and IAM best practices
 
 ### Container Technologies
-- ✅ Multi-stage Docker builds
-- ✅ Multi-architecture image creation (ARM/x86)
-- ✅ Container security (non-root user, scanning)
-- ✅ Production WSGI server configuration
-- ✅ Container registry management (ECR)
+- Multi-stage Docker builds
+- Multi-architecture image creation (ARM/x86)
+- Container security (non-root user, scanning)
+- Production WSGI server configuration
+- Container registry management (ECR)
 
 ### DevOps Practices
-- ✅ CI/CD pipeline automation
-- ✅ Infrastructure automation end-to-end
-- ✅ Monitoring and observability
-- ✅ Auto-scaling configuration
-- ✅ Security hardening
-- ✅ Cost optimization strategies
+- CI/CD pipeline automation
+- Infrastructure automation end-to-end
+- Monitoring and observability
+- Auto-scaling configuration
+- Security hardening
+- Cost optimization strategies
 
 ### Problem-Solving & Debugging
-- ✅ IAM permission troubleshooting
-- ✅ Container platform compatibility
-- ✅ VPC networking and DNS resolution
-- ✅ Database initialization in production environments
-- ✅ Real-world constraint handling (password validation, etc.)
+- IAM permission troubleshooting
+- Container platform compatibility
+- VPC networking and DNS resolution
+- Database initialization in production environments
+- Real-world constraint handling (password validation, etc.)
 
 ---
 
-## 🚧 Future Enhancements
+## Future Enhancements
 
 Potential improvements for production readiness:
 
@@ -724,7 +724,7 @@ Potential improvements for production readiness:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is a portfolio project, but suggestions and improvements are welcome!
 
@@ -736,7 +736,7 @@ This is a portfolio project, but suggestions and improvements are welcome!
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Documentation
 - [AWS ECS Best Practices Guide](https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/)
@@ -746,13 +746,13 @@ This is a portfolio project, but suggestions and improvements are welcome!
 
 ---
 
-## 📄 License
+## License
 
 This project is available for educational and portfolio purposes. Feel free to use as reference or inspiration for your own projects.
 
 ---
 
-## 👤 Author
+## Author
 
 **Derek Ogletree**
 - 🌐 Blog: [https://blog.trenigma.dev](https://blog.trenigma.dev)
@@ -762,7 +762,7 @@ This project is available for educational and portfolio purposes. Feel free to u
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with guidance from Claude AI during a hands-on learning session that included:
 - Real-world debugging scenarios
@@ -774,7 +774,7 @@ Built with guidance from Claude AI during a hands-on learning session that inclu
 
 ---
 
-## 📈 Project Stats
+## Project Stats
 
 - **Lines of Terraform Code**: ~1,200
 - **Python Code**: ~250 lines
