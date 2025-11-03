@@ -64,8 +64,6 @@ This project deploys a fully functional TODO REST API with complete CRUD operati
 
 ---
 
-## Quick Start
-
 ### Prerequisites
 
 Ensure you have these installed and configured:
@@ -89,8 +87,8 @@ docker ps  # Should connect to Docker daemon
 
 ```bash
 # Clone the repository
-git clone https://github.com/trenigma/ecs-todo-api.git
-cd ecs-todo-api
+git clone https://github.com/trenigma/ecs-todo-api-project.git
+cd ecs-todo-api-project
 
 # Make scripts executable
 chmod +x scripts/*.sh
@@ -107,12 +105,10 @@ chmod +x scripts/*.sh
 
 #### Step 3: Configure Environment
 
-Get your AWS Account ID:
 ```bash
+# Get your AWS Account ID:
 aws sts get-caller-identity --query Account --output text
 ```
-
-The Terraform configuration will automatically use your ECR repository, so no manual updates needed!
 
 #### Step 4: Deploy Infrastructure
 
@@ -121,8 +117,8 @@ cd terraform
 
 # Initialize Terraform with your backend
 terraform init \
-  -backend-config="bucket=ecs-todo-api-terraform-state-YOUR_ACCOUNT_ID" \
-  -backend-config="key=ecs-todo-api/dev/terraform.tfstate"
+  -backend-config="bucket=ecs-todo-api-project-terraform-state-YOUR_ACCOUNT_ID" \
+  -backend-config="key=ecs-todo-api-project/dev/terraform.tfstate"
 
 # Review what will be created
 terraform plan -var-file=environments/dev.tfvars
