@@ -6,7 +6,7 @@ set -e
 ENV=${1:-dev}
 AWS_REGION="us-west-2"
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-ECR_REPO="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/ecs-todo-api-${ENV}"
+ECR_REPO="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/ecs-todo-api-project-${ENV}"
 IMAGE_TAG=${2:-latest}
 
 echo "🚀 Deploying to ${ENV} environment..."
@@ -21,12 +21,12 @@ aws ecr get-login-password --region ${AWS_REGION} | \
 # Build Docker image
 echo "🔨 Building Docker image..."
 cd app
-docker build --platform linux/amd64 -t ecs-todo-api:${IMAGE_TAG} .
+docker build --platform linux/amd64 -t ecs-todo-api-project:${IMAGE_TAG} .
 
 # Tag image
 echo "🏷️  Tagging image..."
-docker tag ecs-todo-api:${IMAGE_TAG} ${ECR_REPO}:${IMAGE_TAG}
-docker tag ecs-todo-api:${IMAGE_TAG} ${ECR_REPO}:latest
+docker tag ecs-todo-api-project:${IMAGE_TAG} ${ECR_REPO}:${IMAGE_TAG}
+docker tag ecs-todo-api-project:${IMAGE_TAG} ${ECR_REPO}:latest
 
 # Push to ECR
 echo "📤 Pushing to ECR..."
@@ -35,8 +35,8 @@ docker push ${ECR_REPO}:latest
 
 # Update ECS service to use new image
 echo "🔄 Updating ECS service..."
-CLUSTER_NAME="ecs-todo-api-${ENV}-cluster"
-SERVICE_NAME="ecs-todo-api-${ENV}-service"
+CLUSTER_NAME="ecs-todo-api-project-${ENV}-cluster"
+SERVICE_NAME="ecs-todo-api-project-${ENV}-service"
 
 aws ecs update-service \
     --cluster ${CLUSTER_NAME} \

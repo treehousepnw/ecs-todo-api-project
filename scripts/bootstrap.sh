@@ -3,7 +3,7 @@ set -e
 
 # Bootstrap script to create S3 bucket and DynamoDB table for Terraform state
 
-PROJECT_NAME="ecs-todo-api"
+PROJECT_NAME="ecs-todo-api-project"
 AWS_REGION="us-west-2"
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 BUCKET_NAME="${PROJECT_NAME}-terraform-state-${AWS_ACCOUNT_ID}"
@@ -71,7 +71,7 @@ echo ""
 echo "📋 Next steps:"
 echo "   1. Update terraform/environments/*.tfvars with your AWS account ID"
 echo "   2. Run: cd terraform"
-echo "   3. Run: terraform init -backend-config=\"bucket=${BUCKET_NAME}\" -backend-config=\"key=ecs-todo-api/dev/terraform.tfstate\""
+echo "   3. Run: terraform init -backend-config=\"bucket=${BUCKET_NAME}\" -backend-config=\"key=ecs-todo-api-project/dev/terraform.tfstate\""
 echo "   4. Run: terraform plan -var-file=environments/dev.tfvars"
 echo ""
 echo "💾 Backend config:"
