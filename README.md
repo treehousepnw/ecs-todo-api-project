@@ -11,18 +11,16 @@ A production-grade REST API demonstrating modern DevOps practices with AWS ECS F
 
 This project deploys a fully functional TODO REST API with complete CRUD operations on AWS infrastructure spanning 3 availability zones. Every component is defined as code, making the entire stack reproducible and version-controlled.
 
-**Live Demo Status:** ✅ Operational (may be scaled down to save costs)
-
 ### Key Features
 
-- ✅ **Multi-AZ High Availability**: Deployed across 3 availability zones for fault tolerance
-- ✅ **Automated Infrastructure**: Single `terraform apply` deploys everything including Docker images
-- ✅ **Container Orchestration**: ECS Fargate with auto-scaling (1-10 tasks based on CPU/memory)
-- ✅ **Managed Database**: RDS PostgreSQL with automated backups and encryption
-- ✅ **Load Balancing**: Application Load Balancer with health checks
-- ✅ **Security**: Private subnets, security groups, secrets in Parameter Store
-- ✅ **Monitoring**: CloudWatch logs, metrics, dashboards, and alarms
-- ✅ **CI/CD Ready**: GitHub Actions workflow included
+- **Multi-AZ High Availability**: Deployed across 3 availability zones for fault tolerance
+- **Automated Infrastructure**: Single `terraform apply` deploys everything including Docker images
+- **Container Orchestration**: ECS Fargate with auto-scaling (1-10 tasks based on CPU/memory)
+- **Managed Database**: RDS PostgreSQL with automated backups and encryption
+- **Load Balancing**: Application Load Balancer with health checks
+- **Security**: Private subnets, security groups, secrets in Parameter Store
+- **Monitoring**: CloudWatch logs, metrics, dashboards, and alarms
+- **CI/CD Ready**: GitHub Actions workflow included
 
 ---
 
