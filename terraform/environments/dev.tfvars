@@ -1,6 +1,6 @@
 # Development Environment Configuration
 environment = "dev"
-
+ACCOUNT_ID  = "your-account-id"
 
 # ECS Configuration
 ecs_task_cpu      = 256
