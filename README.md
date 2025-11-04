@@ -79,6 +79,9 @@ terraform version  # Should be >= 1.5.0
 # Check Docker
 docker --version
 docker ps  # Should connect to Docker daemon
+
+# Check jq installed
+jq --version
 ```
 
 ### Installation
