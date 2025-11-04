@@ -87,7 +87,7 @@ docker ps  # Should connect to Docker daemon
 
 ```bash
 # Clone the repository
-git clone https://github.com/trenigma/ecs-todo-api-project.git
+git clone https://github.com/treehousepnw/ecs-todo-api-project.git
 cd ecs-todo-api-project
 
 # Make scripts executable
