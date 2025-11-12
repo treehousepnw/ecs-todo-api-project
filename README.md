@@ -458,6 +458,26 @@ resource "docker_registry_image" "app" {
 
 Now `terraform apply` automatically builds and pushes the image!
 
+### Issue #7: Target group health check timing
+
+**The symptom:** Tasks starting successfully but ALB returning 503 for several minutes.
+
+**What I learned:** Default health check intervals (30 seconds) combined with default healthy threshold (5 checks) means it takes 2.5 minutes for a target to become healthy, even if the app is ready in 10 seconds.
+
+**The optimization:** Tuned health check settings:
+
+```hcl
+health_check {
+  enabled             = true
+  path                = "/health"
+  healthy_threshold   = 2  # Down from 5
+  unhealthy_threshold = 3
+  timeout             = 5
+  interval            = 15  # Down from 30
+  matcher             = "200"
+}
+```
+
 ---
 
 ## Observability
